@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
-const repoName = process.env.GITHUB_REPOSITORY
+const isGitHubPages = !!process.env.GITHUB_REPOSITORY
+const repoName = isGitHubPages
   ? process.env.GITHUB_REPOSITORY.split("/")[1]
   : "NYPage26"
-const basePath = `/${repoName}`
-const assetPrefix = `${basePath}/`
+const basePath = isGitHubPages ? `/${repoName}` : ""
+const assetPrefix = basePath ? `${basePath}/` : ""
 
 const nextConfig = {
   output: "export",

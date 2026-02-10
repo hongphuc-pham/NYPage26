@@ -58,7 +58,7 @@ export function TarotCardItem({
         <div className="card-front absolute inset-0 rounded-xl border-2 border-accent/20 overflow-hidden group hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_25px_hsl(0_80%_55%/0.25)]">
           <div className="relative h-full w-full">
             <Image
-              src="/card-back.jpg"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/card-back.jpg`}
               alt="Tarot card back"
               fill
               className="object-cover"
