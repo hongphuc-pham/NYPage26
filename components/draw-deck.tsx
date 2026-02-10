@@ -96,7 +96,7 @@ export function DrawDeck() {
           >
             <div className="relative h-full w-full">
               <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/card-back.jpg`}
+                src="card-back.jpg"
                 alt="Card back"
                 fill
                 className="object-cover"
@@ -120,7 +120,7 @@ export function DrawDeck() {
         >
           <div className="relative h-full w-full">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/card-back.jpg`}
+              src="card-back.jpg"
               alt="Draw a card"
               fill
               className="object-cover"
