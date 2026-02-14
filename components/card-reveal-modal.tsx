@@ -2,7 +2,8 @@
 
 import React from "react"
 
-import type { TarotCard } from "@/lib/tarot-data";
+import { getZodiacLabel, getSuit, type TarotCard } from "@/lib/tarot-data";
+import { SuitIcon } from "@/components/suit-icons";
 import {
   Dialog,
   DialogContent,
@@ -166,14 +167,18 @@ export function CardRevealModal({
             style={{ animationDelay: "0.55s", opacity: 0 }}
           >
             <span className="flex items-center gap-2">
-              {elementIcons[card.element] || <Sparkles className="h-5 w-5" />}
+              {getSuit(card) ? (
+                <SuitIcon suit={getSuit(card)!} className="h-5 w-5" />
+              ) : (
+                elementIcons[card.element] || <Sparkles className="h-5 w-5" />
+              )}
               <span>
                 <span className="text-foreground/70 font-medium">{card.element}</span>
               </span>
             </span>
             <span className="flex items-center gap-2">
               <Star className="h-4 w-4 text-accent/50" />
-              <span className="text-foreground/70 font-medium">{card.zodiac}</span>
+              <span className="text-foreground/70 font-medium">{getZodiacLabel(card)}</span>
             </span>
           </div>
         </div>

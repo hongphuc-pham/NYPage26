@@ -3,7 +3,7 @@
 import React from "react";
 import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
-import { tarotCards, type TarotCard } from "@/lib/tarot-data";
+import { tarotCards, searchTarotCards, type TarotCard } from "@/lib/tarot-data";
 import { CardRevealModal } from "@/components/card-reveal-modal";
 import { Sparkles, Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -46,29 +46,40 @@ export function DrawDeck() {
     }, 1400);
   }, [phase, addToHistory]);
 
+  const [searchMatches, setSearchMatches] = useState<TarotCard[]>([]);
+
   const handleSearch = useCallback(() => {
-    const query = searchValue.trim().toLowerCase();
+    const query = searchValue.trim();
     if (!query) return;
     setSearchError("");
+    setSearchMatches([]);
 
-    const match = tarotCards.find(
-      (card) =>
-        card.name.toLowerCase().includes(query) ||
-        card.meaning.toLowerCase().includes(query) ||
-        card.keywords.some((kw) => kw.toLowerCase().includes(query)) ||
-        card.element.toLowerCase().includes(query) ||
-        card.zodiac.toLowerCase().includes(query)
-    );
+    const matches = searchTarotCards(query);
 
-    if (match) {
-      setDrawnCard(match);
-      setModalOpen(true);
-      addToHistory(match);
-      setSearchValue("");
-    } else {
-      setSearchError("No card found -- try \"love\", \"strength\", or \"success\"");
+    if (matches.length === 0) {
+      setSearchError('No card found — try name, id (0–77), numeral (e.g. "VII"), or keyword');
+      return;
     }
+    if (matches.length === 1) {
+      setDrawnCard(matches[0]);
+      setModalOpen(true);
+      addToHistory(matches[0]);
+      setSearchValue("");
+      return;
+    }
+    setSearchMatches(matches);
   }, [searchValue, addToHistory]);
+
+  const pickSearchMatch = useCallback(
+    (card: TarotCard) => {
+      setDrawnCard(card);
+      setModalOpen(true);
+      addToHistory(card);
+      setSearchValue("");
+      setSearchMatches([]);
+    },
+    [addToHistory]
+  );
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") handleSearch();
@@ -162,7 +173,7 @@ export function DrawDeck() {
             <Input
               ref={inputRef}
               type="text"
-              placeholder="Search by name, meaning, keyword..."
+              placeholder="Search by name, id (0–77), numeral, keyword..."
               value={searchValue}
               onChange={(e) => {
                 setSearchValue(e.target.value);
@@ -200,6 +211,25 @@ export function DrawDeck() {
           <p className="text-center text-xs text-primary/70 mt-3 animate-fade-in-up">
             {searchError}
           </p>
+        )}
+        {searchMatches.length > 1 && (
+          <div className="mt-3 animate-fade-in-up">
+            <p className="text-center text-xs text-muted-foreground mb-2">
+              Several cards match — choose one:
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {searchMatches.map((card) => (
+                <button
+                  type="button"
+                  key={card.id}
+                  onClick={() => pickSearchMatch(card)}
+                  className="px-3 py-1.5 rounded-full border border-border bg-secondary/50 text-xs text-secondary-foreground hover:border-primary/40 hover:bg-primary/10 hover:text-foreground transition-all cursor-pointer"
+                >
+                  {card.name} ({card.numeral})
+                </button>
+              ))}
+            </div>
+          </div>
         )}
       </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef } from "react";
-import { tarotCards, type TarotCard } from "@/lib/tarot-data";
+import { tarotCards, searchTarotCards, type TarotCard } from "@/lib/tarot-data";
 import { TarotCardItem } from "@/components/tarot-card";
 import { SearchBar } from "@/components/search-bar";
 import { CardRevealModal } from "@/components/card-reveal-modal";
@@ -25,19 +25,8 @@ export function CardGrid() {
     }
 
     setHasSearched(true);
-    const q = query.toLowerCase();
-    const matchingIds = new Set<number>();
-
-    tarotCards.forEach((card) => {
-      const matches =
-        card.name.toLowerCase().includes(q) ||
-        card.meaning.toLowerCase().includes(q) ||
-        card.keywords.some((kw) => kw.toLowerCase().includes(q)) ||
-        card.element.toLowerCase().includes(q) ||
-        card.description.toLowerCase().includes(q);
-
-      if (matches) matchingIds.add(card.id);
-    });
+    const matchingCards = searchTarotCards(query);
+    const matchingIds = new Set(matchingCards.map((c) => c.id));
 
     // First wiggle all cards, then reveal matches with stagger
     setWiggleIds(new Set(tarotCards.map((c) => c.id)));

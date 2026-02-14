@@ -3,6 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import type { TarotCard } from "@/lib/tarot-data";
+import { getSuit } from "@/lib/tarot-data";
+import { SuitIcon } from "@/components/suit-icons";
 import {
   Sparkles,
   Star,
@@ -114,10 +116,14 @@ export function TarotCardItem({
                 {card.meaning}
               </p>
             </div>
-            {/* Element */}
+            {/* Element / suit logo */}
             <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground relative z-10">
-              {elementIcons[card.element] || (
-                <Sparkles className="h-3 w-3" />
+              {getSuit(card) ? (
+                <SuitIcon suit={getSuit(card)!} className="h-3 w-3" />
+              ) : (
+                elementIcons[card.element] || (
+                  <Sparkles className="h-3 w-3" />
+                )
               )}
               <span>{card.element}</span>
             </div>
