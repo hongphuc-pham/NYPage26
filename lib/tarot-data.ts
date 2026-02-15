@@ -26,12 +26,13 @@ export function getSuit(card: TarotCard): TarotSuit | null {
   return (suit as TarotSuit) ?? null;
 }
 
-/** Format zodiac for display (sign / ruler or sign only, or "—" if none). */
+/** Format zodiac for display (sign / decan / ruler, or "—" if none). */
 export function getZodiacLabel(card: TarotCard): string {
   const z = card.zodiac;
   if (!z) return "—";
   const parts: string[] = [];
   if (z.sign) parts.push(z.sign);
+  if (z.decan) parts.push(z.decan);
   if (z.ruler && z.ruler !== z.sign) parts.push(z.ruler);
   return parts.length ? parts.join(" / ") : "—";
 }
@@ -84,7 +85,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Uranus"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Imperial Radiant Pioneer carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 1,
@@ -102,7 +103,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Mercury"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Aurora Master Creator carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 2,
@@ -120,7 +121,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Moon"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Celestial Sacred Intuitive carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 3,
@@ -138,7 +139,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Venus"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Divine Abundant Nurturer carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 4,
@@ -156,7 +157,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Mars"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Divine Sovereign Leader carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 5,
@@ -174,7 +175,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Venus"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Luminous Wise Guide carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 6,
@@ -192,7 +193,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Mercury"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Aurora Heart Harmony carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 7,
@@ -210,7 +211,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Moon"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Starlit Victorious Driver carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 8,
@@ -228,7 +229,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Sun"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Radiant Inner Lionheart carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 9,
@@ -246,7 +247,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Mercury"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Divine Illuminated Seeker carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 10,
@@ -264,7 +265,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Jupiter"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Starlit Wheel of Blessings carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 11,
@@ -282,7 +283,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Venus"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Luminous Balanced Truth carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 12,
@@ -300,7 +301,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Neptune"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Sovereign Sacred Perspective carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 13,
@@ -318,7 +319,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Pluto"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Aurora Phoenix Transformation carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 14,
@@ -336,7 +337,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Jupiter"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Golden Divine Harmony carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 15,
@@ -354,7 +355,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Saturn"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Aurora Liberated Power carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 16,
@@ -372,7 +373,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Mars"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Radiant Awakening Lightning carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 17,
@@ -390,7 +391,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Saturn"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Radiant Hopeful Light carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 18,
@@ -408,7 +409,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Moon"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Starlit Dream Illuminator carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 19,
@@ -426,7 +427,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Sun"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Imperial Radiant Joy carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 20,
@@ -444,7 +445,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Pluto"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Imperial Soul Awakening carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 21,
@@ -462,7 +463,7 @@ export const tarotCards: TarotCard[] = [
       "decan": null,
       "ruler": "Saturn"
     },
-    "newYearMessage": "Fire Horse 2026 urges bold, conscious action aligned with this card."
+    "newYearMessage": "Ethereal Golden Completion carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 22,
@@ -476,11 +477,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Fire",
     "zodiac": {
-      "sign": "Aries",
+      "sign": null,
       "decan": null,
-      "ruler": "Mars"
+      "ruler": null
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Sovereign Ace of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 23,
@@ -498,7 +499,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "1st decan",
       "ruler": "Mars"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Divine Two of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 24,
@@ -516,7 +517,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "2nd decan",
       "ruler": "Sun"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Radiant Three of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 25,
@@ -534,7 +535,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "3rd decan",
       "ruler": "Venus"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Velvet Four of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 26,
@@ -552,7 +553,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "1st decan",
       "ruler": "Saturn"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Ethereal Five of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 27,
@@ -570,7 +571,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "2nd decan",
       "ruler": "Jupiter"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Imperial Six of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 28,
@@ -588,7 +589,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "3rd decan",
       "ruler": "Mars"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Ethereal Seven of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 29,
@@ -606,7 +607,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "1st decan",
       "ruler": "Mercury"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Radiant Eight of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 30,
@@ -624,7 +625,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "2nd decan",
       "ruler": "Moon"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Golden Nine of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 31,
@@ -642,7 +643,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "3rd decan",
       "ruler": "Saturn"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Ethereal Ten of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 32,
@@ -656,11 +657,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Fire",
     "zodiac": {
-      "sign": "Aries",
+      "sign": "Sagittarius",
       "decan": null,
-      "ruler": "Mars"
+      "ruler": "Jupiter"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Ethereal Page of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 33,
@@ -674,11 +675,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Fire",
     "zodiac": {
-      "sign": "Leo",
+      "sign": "Sagittarius",
       "decan": null,
-      "ruler": "Sun"
+      "ruler": "Jupiter"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Imperial Knight of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 34,
@@ -692,11 +693,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Fire",
     "zodiac": {
-      "sign": "Sagittarius",
+      "sign": "Leo",
       "decan": null,
-      "ruler": "Jupiter"
+      "ruler": "Sun"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Velvet Queen of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 35,
@@ -710,11 +711,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Fire",
     "zodiac": {
-      "sign": "Sagittarius",
+      "sign": "Aries",
       "decan": null,
-      "ruler": "Saturn"
+      "ruler": "Mars"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Sovereign King of Wands carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 36,
@@ -728,11 +729,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Water",
     "zodiac": {
-      "sign": "Cancer",
+      "sign": null,
       "decan": null,
-      "ruler": "Moon"
+      "ruler": null
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Luminous Ace of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 37,
@@ -750,7 +751,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "1st decan",
       "ruler": "Venus"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Ethereal Two of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 38,
@@ -768,7 +769,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "2nd decan",
       "ruler": "Mercury"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Sacred Three of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 39,
@@ -786,7 +787,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "3rd decan",
       "ruler": "Moon"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Celestial Four of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 40,
@@ -804,7 +805,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "1st decan",
       "ruler": "Mars"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Sovereign Five of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 41,
@@ -822,7 +823,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "2nd decan",
       "ruler": "Sun"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Imperial Six of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 42,
@@ -840,7 +841,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "3rd decan",
       "ruler": "Venus"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Radiant Seven of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 43,
@@ -858,7 +859,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "1st decan",
       "ruler": "Saturn"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Luminous Eight of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 44,
@@ -876,7 +877,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "2nd decan",
       "ruler": "Jupiter"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Starlit Nine of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 45,
@@ -894,7 +895,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "3rd decan",
       "ruler": "Mars"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Sacred Ten of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 46,
@@ -908,11 +909,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Water",
     "zodiac": {
-      "sign": "Cancer",
+      "sign": "Pisces",
       "decan": null,
-      "ruler": "Moon"
+      "ruler": "Neptune"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Ethereal Page of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 47,
@@ -926,11 +927,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Water",
     "zodiac": {
-      "sign": "Scorpio",
+      "sign": "Pisces",
       "decan": null,
-      "ruler": "Pluto"
+      "ruler": "Neptune"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Aurora Knight of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 48,
@@ -944,11 +945,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Water",
     "zodiac": {
-      "sign": "Pisces",
+      "sign": "Scorpio",
       "decan": null,
-      "ruler": "Neptune"
+      "ruler": "Pluto"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Sacred Queen of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 49,
@@ -962,11 +963,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Water",
     "zodiac": {
-      "sign": "Pisces",
+      "sign": "Cancer",
       "decan": null,
-      "ruler": "Jupiter"
+      "ruler": "Moon"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Aurora King of Cups carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 50,
@@ -980,11 +981,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Air",
     "zodiac": {
-      "sign": "Libra",
+      "sign": null,
       "decan": null,
-      "ruler": "Venus"
+      "ruler": null
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Aurora Ace of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 51,
@@ -1002,7 +1003,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "1st decan",
       "ruler": "Moon"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Velvet Two of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 52,
@@ -1020,7 +1021,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "2nd decan",
       "ruler": "Saturn"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Sacred Three of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 53,
@@ -1038,7 +1039,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "3rd decan",
       "ruler": "Jupiter"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Velvet Four of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 54,
@@ -1056,7 +1057,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "1st decan",
       "ruler": "Venus"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Aurora Five of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 55,
@@ -1074,7 +1075,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "2nd decan",
       "ruler": "Mercury"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Imperial Six of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 56,
@@ -1092,7 +1093,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "3rd decan",
       "ruler": "Moon"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Sovereign Seven of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 57,
@@ -1110,7 +1111,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "1st decan",
       "ruler": "Jupiter"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Aurora Eight of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 58,
@@ -1128,7 +1129,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "2nd decan",
       "ruler": "Mars"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Celestial Nine of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 59,
@@ -1146,7 +1147,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "3rd decan",
       "ruler": "Sun"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Luminous Ten of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 60,
@@ -1160,11 +1161,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Air",
     "zodiac": {
-      "sign": "Libra",
+      "sign": "Gemini",
       "decan": null,
-      "ruler": "Venus"
+      "ruler": "Mercury"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Divine Page of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 61,
@@ -1178,11 +1179,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Air",
     "zodiac": {
-      "sign": "Aquarius",
+      "sign": "Gemini",
       "decan": null,
-      "ruler": "Saturn"
+      "ruler": "Mercury"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Velvet Knight of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 62,
@@ -1196,11 +1197,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Air",
     "zodiac": {
-      "sign": "Gemini",
+      "sign": "Aquarius",
       "decan": null,
-      "ruler": "Mercury"
+      "ruler": "Saturn"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Celestial Queen of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 63,
@@ -1214,11 +1215,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Air",
     "zodiac": {
-      "sign": "Gemini",
+      "sign": "Libra",
       "decan": null,
-      "ruler": "Mercury"
+      "ruler": "Venus"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Starlit King of Swords carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 64,
@@ -1232,11 +1233,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Earth",
     "zodiac": {
-      "sign": "Capricorn",
+      "sign": null,
       "decan": null,
-      "ruler": "Saturn"
+      "ruler": null
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Sovereign Ace of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 65,
@@ -1254,7 +1255,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "1st decan",
       "ruler": "Jupiter"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Starlit Two of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 66,
@@ -1272,7 +1273,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "2nd decan",
       "ruler": "Mars"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Velvet Three of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 67,
@@ -1290,7 +1291,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "3rd decan",
       "ruler": "Sun"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Velvet Four of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 68,
@@ -1308,7 +1309,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "1st decan",
       "ruler": "Mercury"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Sacred Five of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 69,
@@ -1326,7 +1327,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "2nd decan",
       "ruler": "Moon"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Velvet Six of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 70,
@@ -1344,7 +1345,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "3rd decan",
       "ruler": "Saturn"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Radiant Seven of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 71,
@@ -1362,7 +1363,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "1st decan",
       "ruler": "Sun"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Luminous Eight of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 72,
@@ -1380,7 +1381,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "2nd decan",
       "ruler": "Venus"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Imperial Nine of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 73,
@@ -1398,7 +1399,7 @@ export const tarotCards: TarotCard[] = [
       "decan": "3rd decan",
       "ruler": "Mercury"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Ethereal Ten of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 74,
@@ -1412,11 +1413,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Earth",
     "zodiac": {
-      "sign": "Capricorn",
+      "sign": "Virgo",
       "decan": null,
-      "ruler": "Saturn"
+      "ruler": "Mercury"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Radiant Page of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 75,
@@ -1430,11 +1431,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Earth",
     "zodiac": {
-      "sign": "Taurus",
+      "sign": "Virgo",
       "decan": null,
-      "ruler": "Venus"
+      "ruler": "Mercury"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Celestial Knight of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 76,
@@ -1448,11 +1449,11 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Earth",
     "zodiac": {
-      "sign": "Virgo",
+      "sign": "Taurus",
       "decan": null,
-      "ruler": "Mercury"
+      "ruler": "Venus"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Ethereal Queen of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   },
   {
     "id": 77,
@@ -1466,10 +1467,10 @@ export const tarotCards: TarotCard[] = [
     ],
     "element": "Earth",
     "zodiac": {
-      "sign": "Virgo",
+      "sign": "Capricorn",
       "decan": null,
-      "ruler": "Mercury"
+      "ruler": "Saturn"
     },
-    "newYearMessage": "In Fire Horse 2026, this energy moves fast and rewards clarity and courage."
+    "newYearMessage": "Aurora King of Pentacles carries a profound blessing for your path in the Fire Horse year. It invites you to act with courage, move with intention, and trust the quiet wisdom within your heart. By embracing this energy, you open doors to meaningful growth, deeper fulfillment, and luminous transformation."
   }
 ]
