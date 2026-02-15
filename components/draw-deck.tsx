@@ -82,7 +82,10 @@ export function DrawDeck() {
   );
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") handleSearch();
+    if (e.key === "Enter") {
+      e.preventDefault();
+      requestAnimationFrame(() => handleSearch());
+    }
   };
 
   return (
